@@ -50,7 +50,7 @@ Banniere cookies
     border-radius: 1rem;
     transition: transform 0.1s;
 }
-.btn:active{
+.btn :active{
     transform: scale(0.95);
 }
 .btn-accept{
@@ -58,4 +58,9 @@ Banniere cookies
 }
 .btn-deny{
     background-color: rgba(34, 34, 34,0);
+}
+
+.onclick{
+    opacity: 0 !important; /* !important pour écraser la règle de l'opacité des cookies*/
+    transition: opacity 1s;
 }
