@@ -14,18 +14,27 @@ const modalQuit = document.querySelector(".modal-quit");
 // 4. Je lance la fonction onScrollDisplayModal sur l'evenement scroll de la fenetre
 window.addEventListener("scroll",onScrollDisplayModal);
 
-// 5. Je fais disparaite la modale au clique sur la croix
-modalQuit.addEventListener("click",function(){
-    // ...
-
-    window.removeEventListener("scroll",onScrollDisplayModal);
-});
-
 /**
  *  Fonction à passer en parametre de addEventListener("scroll",function)
  *  Obligatoire pour pouvoir utiliser removeEventListener(function)
  */
 function onScrollDisplayModal(){
-    console.log("Ouiiii je scroollll");
 
+      if(window.scrollY >= section1.offsetTop){
+        // J'affiche la modale
+        modal.style.display = "flex";
+        modal.style.opacity = 1;
+       
+        // Je supprime l'event listener scroll
+      }
 }
+
+// 5. Je fais disparaite la modale au clique sur la croix
+modalQuit.addEventListener("click",function(){
+    // ...
+        modal.style.display = "none";
+        modal.style.opacity = 0;
+    window.removeEventListener("scroll",onScrollDisplayModal);
+});
+
+
