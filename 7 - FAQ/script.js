@@ -15,6 +15,10 @@ questions.forEach(function(question){
     // 3. Lors du click sur la question
     question.addEventListener("click",function(){
         // 4. Je recupere la reponse correspondante et le chevron correspondante
-        // ..
+        const chevron = question.querySelector("i");
+        const reponse = question.nextElementSibling;
+        chevron.classList.toggle("fa-chevron-down");
+        chevron.classList.toggle("fa-chevron-up");
+        reponse.classList.toggle("show-reponse");
     });
 });

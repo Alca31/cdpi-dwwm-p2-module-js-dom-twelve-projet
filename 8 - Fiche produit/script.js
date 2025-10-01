@@ -20,3 +20,19 @@ const panierMsg = document.querySelector(".panier-msg");
 let panier = 0;
 
 // ...
+
+btnAdd.addEventListener("click", function () {
+     panier++;
+     panierMsg.textContent = `${panier} Produit ajouté au panier`;
+});
+
+
+vignettes.forEach(function (vignette) {
+    // 3. Lors du click sur la vignette
+        vignette.addEventListener("click",function(){
+        const origin=fullImg.getAttribute("src");
+        fullImg.setAttribute("src",vignette.getAttribute("src"));
+        vignette.setAttribute("src",origin);
+    });
+
+});
